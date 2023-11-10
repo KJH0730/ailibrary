@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MainAlarm from "./MainAlarm";
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,13 +9,14 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: row;
-`
+`;
 
 const NavWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+  width: 92%;
 `;
 
 const NavItem = styled.a`
@@ -48,6 +50,7 @@ function NavigationBar() {
                 <NavItem href="/notice">도서관안내</NavItem>
                 <NavItem href="/mypage">MyPage</NavItem>
             </NavWrapper>
+            <MainAlarm/>
         </Wrapper>
     );
 }

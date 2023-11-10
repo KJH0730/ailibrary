@@ -1,4 +1,3 @@
-// Slider.js
 import React from "react";
 import {useNavigate} from "react-router-dom";
 import BookFrame from "../components/BookFrame";
@@ -55,7 +54,7 @@ const CustomSlider = styled(Slider)`
 
 const StyledDiv = styled.div`
   padding-top: 10px;
-  margin-left: 60px;
+  margin-left: ${props => props.marginLeft};
 `;
 const Header = styled.div`
   display: flex;
@@ -83,7 +82,7 @@ function SliderComponent({title, books, showRank, showRezDate, showReturnDate, t
         marginRight: "-20px",
         transition: "transform 0.3s ease"
     };
-
+    const marginLeft = showRank ? "60px" : "20px";
     const settings = {
         dots: false,
         infinite: true,
@@ -152,7 +151,7 @@ function SliderComponent({title, books, showRank, showRezDate, showReturnDate, t
             </Header>
             <CustomSlider {...settings}>
                 {books.map((book, index) => (
-                    <StyledDiv key={index}>
+                    <StyledDiv marginLeft={marginLeft} key={index}>
                         <BookFrame
                             book={book}
                             rank={index + 1}

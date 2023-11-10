@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 const BookWrapper = styled.div`
   ${(props) => props.wrapper};
 `;
-
 const BookImage = styled.img`
   width: 100%;
   height: 92%;

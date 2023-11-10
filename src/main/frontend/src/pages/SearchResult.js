@@ -63,7 +63,13 @@ function SearchResults() {
     if (error) {
         return <div>Error: {error.message}</div>; // 에러가 있을 경우 에러 메시지 표시
     }
-
+    const wrapperStyle = {
+        width: "180px",
+        height: "270px",
+        position: "relative",
+        marginRight: "-20px",
+        transition: "transform 0.3s ease"
+    };
     return (
         <Wrapper>
             <Header/>
@@ -72,7 +78,11 @@ function SearchResults() {
                 <BookList>
                     {searchResults.map((book) => (
                         <BookItem key={book.bookId}>
-                            <BookFrame book={book}/>
+                            <BookFrame
+                                book={book}
+                                showTitle={true}
+                                wrapper={wrapperStyle}
+                            />
                         </BookItem>
                     ))}
                 </BookList>

@@ -13,6 +13,7 @@ import AllAlarm from "./pages/AllAlarm";
 import LoanBooksPage from "./pages/LoanBooksPage";
 import NoticeWritePage from "./pages/NoticeWritePage";
 import NoticeViewPage from "./pages/NoticeViewPage";
+import ReserveBooksPage from "./pages/ReserveBooksPage";
 function App() {
     // const [closingWindow, setClosingWindow] = useState(false);
     //
@@ -97,6 +98,7 @@ function App() {
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/mypage" element={<MyPage />}/>
                     <Route path="/loanbooks" element={<LoanBooksPage/>} />
+                    <Route path="/reservebooks" element={<ReserveBooksPage/>} />
                     <Route path="/book-detail/:bookId" element={<BookDetail/>}/>
                     <Route path="/results/:keyword" element={<SearchResult/>}/>
                     <Route path="/notice" element={<Notice/>}/>
