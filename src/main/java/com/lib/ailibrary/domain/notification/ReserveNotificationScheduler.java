@@ -102,7 +102,7 @@ public class ReserveNotificationScheduler {
     }
 
     //********반납날짜 하루 전 웹페이지에 알림 띄우기(수정 필요)*******
-    @Scheduled(fixedRate = 600000)
+    @Scheduled(fixedRate = 60000000)
     public void checkBookLoan() {
         List<BookLoanResponse> responses = bookLoanService.findLoanAll();
         LocalDate currentDate = LocalDate.now();

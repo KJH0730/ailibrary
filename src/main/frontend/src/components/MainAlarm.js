@@ -44,8 +44,8 @@ const MainAlarm = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const storedToken = localStorage.getItem('token');
     const storedUserInfo = localStorage.getItem("userInfo");
-    const userInfo = storedUserInfo ? JSON.parse(storedUserInfo) : null;
-    const userStuId = userInfo.userStuId;
+//    const userInfo = storedUserInfo ? JSON.parse(storedUserInfo) : null;
+//    const userStuId = userInfo.userStuId;
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -55,29 +55,29 @@ const MainAlarm = () => {
         setIsModalOpen(false);
     };
 
-    const NotificationCount = () => {
-        axios
-            .post("http://localhost:8080/notification/count", userStuId, {
-                headers: {
-                    'Authorization': storedToken,
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then((response) => {
-                setCount(response.data);
-            })
-            .catch((error) => {
-                console.error("Error", error);
-            });
-    };
-    useEffect(() => {
-        NotificationCount();
-    }, []);
+//    const NotificationCount = () => {
+//        axios
+//            .post("http://localhost:8080/notification/count", userStuId, {
+//                headers: {
+//                    'Authorization': storedToken,
+//                    'Content-Type': 'application/json'
+//                }
+//            })
+//            .then((response) => {
+//                setCount(response.data);
+//            })
+//            .catch((error) => {
+//                console.error("Error", error);
+//            });
+//    };
+//    useEffect(() => {
+//        NotificationCount();
+//    }, []);
     return (
         <Wrapper>
             <UserImage src={userImage} onClick = {openModal}/>
-            {count > 0 && <Count>{count}</Count>}
-            {isModalOpen && <MainAlarmModal count={count} userInfo={userInfo} onClose={closeModal} />}
+
+
         </Wrapper>
     );
 }
